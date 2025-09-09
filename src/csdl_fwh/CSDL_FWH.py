@@ -1,5 +1,3 @@
-# %%
-
 import csdl_alpha as csdl
 import numpy as np
 
@@ -165,16 +163,6 @@ def CSDL_FWH_def(FWHVariableGroup):
     px  = p * n_hat_1
     py  = p * n_hat_2
     pz  = p * n_hat_3
-
-    # Debug:KDH
-    # print('p_interp_P.shape=',p_interp_T.shape)
-    # print('p_interp_L.shape=',p_interp_L.shape)    
-    # print('Ux.shape',Ux.shape)
-    # print('rho.shape',rho.shape)
-    # print('n_hat_1.shape',n_hat_1.shape)
-    # print('dS.shape',dS.shape)
-    # print('px.shape',px.shape)
-
           
     # //////////////////// FW-H Main Module ////////////////////
     # =================================================
@@ -206,12 +194,6 @@ def CSDL_FWH_def(FWHVariableGroup):
     Qndot = CSDL_Time_Derivative( Qn , dt )
     Lrdot = CSDL_Time_Derivative( Lr , dt )
     
-    # # Debug:KDH
-    # print('Qn.shape=',Qn.shape)
-    # print('Qndot.shape=',Qndot.shape)
-    # print('Lrdot.shape=',Lrdot.shape)
-    # print('dS.shape=',dS.shape)   
-    
     
     # Thickness Noise & Loading Noise at Retarted time, 
     # although it was calcualted at source time (physically interpreted this way)
@@ -222,9 +204,6 @@ def CSDL_FWH_def(FWHVariableGroup):
           1/(4*pi  ) * dS * (Lr-Lm)           / r_mag**2 / (1-Mr)**2 + \
           1/(4*pi  ) * dS * Lr*(Mr-M0**2)     / r_mag**2 / (1-Mr)**3
 
-    # Debug:KDH
-    # print('P_T.shape=',P_T.shape)
-    # print('P_L.shape=',P_L.shape)
     
     # Find retarded time
     tau = Exp_t + r_mag/c    
@@ -234,9 +213,7 @@ def CSDL_FWH_def(FWHVariableGroup):
     R_source_const       = csdl.average(r_mag,axes=(2,)) # % Constant (Time-averaged) distance time, axis=2 row-wise # CSDL 3-D array
     R_source_const       = csdl.expand(R_source_const, target_shape, 'jk->jki')
     tau_const            = Exp_t + R_source_const/c # (Nobs, N_FWHsurfi, Nt)+ (Nobs, N_FWHsurfi, 1)  = (Nobs, N_FWHsurfi, Nt)
-    # print('tau_const.shape=',tau_const.shape)
-    # print('R_source_const.shape=',R_source_const.shape)
-    
+
 
     # First interpolate for the Constant (Time-averaged) distance time
     # This is done due to the rotating effect, dt=\constant.
@@ -294,14 +271,7 @@ def CSDL_FWH_def(FWHVariableGroup):
         CSDL_Sqq   = CSDL_Sqq.set(csdl.slice[i,:]  , Sqq  )    
         CSDL_SPL13 = CSDL_SPL13.set(csdl.slice[i,:], SPL13 )   
         CSDL_OASPL = CSDL_OASPL.set(csdl.slice[i]  , OASPL )   
-    
-    # Debug:KDH
-    # print('CSDL_freq=',CSDL_freq.value)
-    # print('CSDL_Sqq=',CSDL_Sqq.value)
-    # print('CSDL_f13=',CSDL_f13.value)
-    # print('CSDL_SPL13=',CSDL_SPL13.value)
-    # print('CSDL_OASPL=',CSDL_OASPL.value)
-    
+   
     return tau_interp[0,:], p_FWH_T, p_FWH_L, p_FWH,   CSDL_freq, CSDL_f13, CSDL_Sqq, CSDL_SPL13, CSDL_OASPL
     
 
