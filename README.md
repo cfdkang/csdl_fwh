@@ -5,12 +5,16 @@ It takes time-domain pressure (and surface kinematics, when applicable) on **imp
 
 ## Installation instructions for users
 For direct installation with all dependencies, run on the terminal or command line
+```bash
 pip install "git+https://github.com/cfdkang/csdl_fwh.git"
+```
 
 ## Installation instructions for developers
 To install **csdl_fwh**, first clone the repository and install using pip. On the terminal or command line, run
+ ```bash
 git clone https://github.com/cfdkang/csdl_fwh.git
 pip install -e ./csdl_fwh
+```
 
 ## Test the package
 Example codes (ex_1_vlm.py and ex_2_analytic.py) are included in the examples folder.
