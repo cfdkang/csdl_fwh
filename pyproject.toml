@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "csdl_fwh"
+version = "0.1.0"
+description = "CSDL package of Ffowcs Williams–Hawkings (FWH) module for multidisciplinary design optimization"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [{ name = "Donghun Kang", email = "ehdgns1109@gmail.com" }]
+license = { text = "MIT" }
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["csdl_fwh*"]

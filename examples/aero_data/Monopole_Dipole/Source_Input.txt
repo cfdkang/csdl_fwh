@@ -1,0 +1,78 @@
+Source_Strength,A          1
+Pulsation_frequency,f      5
+Rotational_Radius,R_rot    0.7
+Rotational_frequency,Hz    1
+
+
+
+% ============================================================
+% No Directivity (Fast) : Copy and Paste to above [line 1-10]
+% ============================================================
+Source_Strength,A          1
+Pulsation_frequency,f      5
+Rotational_Radius,R_rot    0.7
+Rotational_frequency,Hz    1
+
+
+% =======================================================================
+% With Directivity (Relatively Slow) : Copy and Paste to above [line 1-10]
+% =======================================================================
+Source_Strength,A          1
+Pulsation_frequency,f      5
+Rotational_Radius,R_rot    0.7
+Rotational_frequency,Hz    1
+
+
+
+
+
+
+
+
+% ///////////
+% BACKUP
+% ///////////
+
+
+% theta_obs = [0 ];
+% theta_obs = [-90 ];
+% theta_obs = [fliplr(pi/20:pi/20:pi),0]; % Monopole
+% theta_obs = [fliplr(2*pi/20:2*pi/20:2*pi),0]; % Dipole
+
+
+% A     = 0.5;       % Source strength (amplitude) (Same: NAJAFI-YAZDI, rspa 2011)
+
+A     = 1;       % Source strength (amplitude)
+f     = 5;       % Pulsation [source] frequency [Hz]
+
+% A     = 1.5;       % Source strength (amplitude)
+% f     = 7.5;       % Pulsation [source] frequency [Hz]
+
+
+% % -----------------------------------------------
+% % Case.1 Stationary monopole / stationary medium
+% % -----------------------------------------------
+% M0  = 0.0;
+% AoA = 0;
+% R_rot = 0.0;              % Rotation radius
+% f_rot = 0;                % Rotational frequency [Hz]
+
+% % -------------------------------------------
+% % Case.2 Stationary monopole / moving medium
+% % -------------------------------------------
+% % M0        = 0.6;
+% % AoA       = 45;
+% M0        = 0.5;
+% AoA       = 10;
+% U0        = M0*c;
+% R_rot     = 0.0;           % Rotation radius
+% f_rot     = 0;             % Rotational frequency [Hz]
+
+
+% ------------------------------------------
+% Case.3 Rotating monopole / moving medium
+% ------------------------------------------
+M0        = 0.5;
+AoA       = 10;
+R_rot     = 0.7;              % Rotation radius
+f_rot     = 1;                % Rotational frequency [Hz]

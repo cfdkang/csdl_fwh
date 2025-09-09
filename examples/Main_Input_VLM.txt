@@ -1,0 +1,30 @@
+Speed_of_sound,c		   340
+mean_density,rho_0         1
+Freestream,U0              10
+Angle_of_Attack,AoA        0
+Observer_Radius,R_obs      2
+Observer_angle,theta_obs   np.array([0])
+CFD_INPUT_NAME			   ./aero_data/sample_panel_code_acoustics_data2
+
+
+% ============================================================
+% No Directivity (Fast) : Copy and Paste to above [line 1-10]
+% ============================================================
+Speed_of_sound,c		   340
+mean_density,rho_0         1
+Mach_Number,M0             0.5
+Angle_of_Attack,AoA        10
+Observer_Radius,R_obs      2
+Observer_angle,theta_obs   np.array([0])
+
+
+% =======================================================================
+% With Directivity (Relatively Slow) : Copy and Paste to above [line 1-10]
+% =======================================================================
+Speed_of_sound,c		   340
+mean_density,rho_0         1
+Mach_Number,M0             0.5
+Angle_of_Attack,AoA        10
+Observer_Radius,R_obs      2
+Observer_angle,theta_obs   [fliplr(2*pi/20:2*pi/20:2*pi),0]
+						   np.append(np.flip(np.arange(2*pi/20,2*pi+0.01,2*pi/20)),0)

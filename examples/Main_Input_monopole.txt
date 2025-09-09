@@ -1,0 +1,35 @@
+Speed_of_sound,c		   340
+mean_density,rho_0         1
+Mach_Number,M0             0.5
+Angle_of_Attack,AoA        10
+Observer_Radius,R_obs      2
+Observer_angle,theta_obs   np.array([0])
+						   
+
+% ============================================================
+% No Directivity (Fast) : Copy and Paste to above [line 1-10] ~ 1min
+% ============================================================
+Speed_of_sound,c		   340
+mean_density,rho_0         1
+Mach_Number,M0             0.5
+Angle_of_Attack,AoA        10
+Observer_Radius,R_obs      2
+Observer_angle,theta_obs   np.array([0])
+
+
+% =======================================================================
+% With Directivity (Relatively Slow) : Copy and Paste to above [line 1-10] ~ 20mins
+% =======================================================================
+Speed_of_sound,c		   340
+mean_density,rho_0         1
+Mach_Number,M0             0.5
+Angle_of_Attack,AoA        10
+Observer_Radius,R_obs      2
+Observer_angle,theta_obs   np.arange(0,200,20)
+
+
+
+
+
+
+
